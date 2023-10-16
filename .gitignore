@@ -1,0 +1,6 @@
+/tmp
+
+.env
+
+*.exe
+*.exe~
