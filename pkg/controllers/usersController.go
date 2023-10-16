@@ -80,8 +80,8 @@ func Login(c *gin.Context) {
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"subject": user.ID,
-		"exp":     time.Now().Add(time.Hour * 24 * 30).Unix(),
+		"sub": user.ID,
+		"exp": time.Now().Add(time.Hour * 24 * 30).Unix(),
 	})
 
 	// Sign and get the complete encoded token as a string using the secret
@@ -98,4 +98,13 @@ func Login(c *gin.Context) {
 	c.SetCookie("Authorization", tokenString, 3600*24*30, "", "", false, true)
 
 	c.Status(200)
+}
+
+func Validate(c *gin.Context) {
+	user, _ := c.Get("user")
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Valid token! User logged in.",
+		"user":    user,
+	})
 }
