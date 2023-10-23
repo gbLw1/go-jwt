@@ -32,7 +32,7 @@ create a `.env` file in the root directory and add the following:
 ```sh
 PORT=8080
 SECRET=YOUR_JWT_SECRET
-DB_URL="host=localhost user=gorm password=gorm dbname=gorm port=5432 sslmode=disable"
+DB_URL="host=localhost user={X} password={X} dbname={X} port=5432 sslmode=disable"
 ```
 
 `PORT` is the port where the API will run (default: 8080). You can change it if you want.
