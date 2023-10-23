@@ -17,7 +17,7 @@ Simple Rest API with JWT Authentication written in Go.
 
 ## Database
 
-[PostgreSQL](https://www.elephantsql.com/).
+[PostgreSQL](https://www.elephantsql.com/)
 
 ---
 
